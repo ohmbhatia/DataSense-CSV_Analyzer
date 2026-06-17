@@ -432,10 +432,10 @@ def show_stage_dashboard():
                 cols = st.columns(len(models))
                 for idx, model in enumerate(models):
                     with cols[idx]:
-                    with st.container(border=True):
-                        st.markdown(f"### {model['model']}")
-                        st.markdown(f"*{model['reason']}*")
-                        st.code(f"from {model['sklearn_class'].rsplit('.', 1)[0]} import {model['sklearn_class'].rsplit('.', 1)[1]}")
+                        with st.container(border=True):
+                            st.markdown(f"### {model['model']}")
+                            st.markdown(f"*{model['reason']}*")
+                            st.code(f"from {model['sklearn_class'].rsplit('.', 1)[0]} import {model['sklearn_class'].rsplit('.', 1)[1]}")
             
             st.divider()
             
