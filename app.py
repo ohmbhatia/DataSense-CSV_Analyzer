@@ -428,9 +428,10 @@ def show_stage_dashboard():
                 suggest_target(st.session_state.df, st.session_state.scan)
             )
             
-            cols = st.columns(len(models))
-            for idx, model in enumerate(models):
-                with cols[idx]:
+            if models:
+                cols = st.columns(len(models))
+                for idx, model in enumerate(models):
+                    with cols[idx]:
                     with st.container(border=True):
                         st.markdown(f"### {model['model']}")
                         st.markdown(f"*{model['reason']}*")
